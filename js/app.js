@@ -11,8 +11,8 @@ quoteBtn.addEventListener('click',async function(){
     quoteBtn.classList.add('loading')
     const res = await fetch('https://free-quotes-api.herokuapp.com/')
     const {quote,author} = await res.json()
-    quoteText.innerText = quote;
-    authorName.innerText = author;
+    quoteText.innerText = quote ? quote : 'Not Found';
+    authorName.innerText = author ? author : 'Not Found';
     quoteBtn.innerText = 'New Quote';
     quoteBtn.classList.remove('loading')
 })
